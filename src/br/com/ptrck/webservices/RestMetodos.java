@@ -22,14 +22,14 @@ public class RestMetodos {
 
 	Configuration conf = new ConfigurationBuilder().addServer().host("localhost").port(11422).build();
 	RemoteCacheManager manager = new RemoteCacheManager(conf);
-	RemoteCache defaultCache = manager.getCache();
+	RemoteCache<Object, Object> defaultCache = manager.getCache();
 	
 	@POST
 	@Path("produto/adiciona")
 	@Produces(MediaType.TEXT_PLAIN)
 	public void insereDados(@FormParam ("nome") String nome, @FormParam ("preco") Double preco, @FormParam ("cod") Integer codBarras) {
 		
-		Produto p = new Produto(nome,preco, codBarras);
+		Produto p = new Produto(nome, preco, codBarras);
 		defaultCache.put(codBarras, p);
 		System.out.println("Produto cadastrado com sucesso " + p);
 

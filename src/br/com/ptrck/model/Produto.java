@@ -2,11 +2,11 @@ package br.com.ptrck.model;
 
 import java.io.Serializable;
 
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 public class Produto implements Serializable{
-	/**
-	 * 
-	 */
+	
 	private String nome;
 	private Double preco;
 	private Integer codBarras;
@@ -36,7 +36,6 @@ public class Produto implements Serializable{
 	}
 
 	public Produto(String nome, Double preco, Integer codBarras) {
-		super();
 		this.nome = nome;
 		this.preco = preco;
 		this.codBarras = codBarras;
@@ -48,7 +47,6 @@ public class Produto implements Serializable{
 	
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return this.nome + " - R$ "+ this.preco + " - " + this.codBarras;
 	}
 	

@@ -6,23 +6,30 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<body style="background-color:#cc0000">
+<body>
 
-<p style="font-family: Verdana; font-size: 32px; color: white"> Busca Produto </p>
-<form action="ws/loja/produto/recupera" method="get">
-	<input type="number" name="cod" required>
-	<input type="submit">
-</form>
+	<fieldset><legend><p style="font-family: Verdana;">Busca Produto</p></legend>
+	<form action="ws/loja/produto/recupera" method="get">
+		<label>Código de Barras: </label><input type="number" name="cod" required> <input type="submit">
+	</form>
+	</fieldset>
+	
+		</br>
+		
+	<fieldset><legend><p style="font-family: Verdana;">Insere Produto</p></legend>
+	<form action="ws/loja/produto/adiciona" method="post">
+		<label>Nome do Produto: </label><input type="text" name="nome" required>
+		<label>Preço do Produto: </label><input type="number" name="preco" required>
+		<label>Codigo de Barras: </label><input type="number" name="cod" required>
+		<button type="submit" onclick="mostraAlerta()">Enviar</button>
+	</form>
+	</fieldset>
 
-<p> Insere Produto </p>
-<form action="ws/loja/produto/adiciona" method="post" target="myiframe">
-	<input type="text" name="nome">
-	<input type="text" name="preco">
-	<input type="text" name="cod">
-	<button type="submit" onclick="printaDados()">Enviar</button>
-</form>
-
-
+	<script>
+		function mostraAlerta() {
+			alert("Dados salvos");
+		}
+	</script>
 
 
 </body>

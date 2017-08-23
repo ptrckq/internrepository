@@ -8,18 +8,22 @@
 </head>
 <body>
 
-	<p style="font-family: Verdana;">Busca Produto</p>
+	<fieldset><legend><p style="font-family: Verdana;">Busca Produto</p></legend>
 	<form action="ws/loja/produto/recupera" method="get">
-		<input type="number" name="cod" required> <input type="submit">
+		<label>Código de Barras: </label><input type="number" name="cod" required> <input type="submit">
 	</form>
-
-	<p>Insere Produto</p>
+	</fieldset>
+	
+		</br>
+		
+	<fieldset><legend><p style="font-family: Verdana;">Insere Produto</p></legend>
 	<form action="ws/loja/produto/adiciona" method="post">
-		<input type="text" name="nome">
-		<input type="text"	name="preco">
-		<input type="text" name="cod">
+		<label>Nome do Produto: </label><input type="text" name="nome" required>
+		<label>Preço do Produto: </label><input type="number" name="preco" required>
+		<label>Codigo de Barras: </label><input type="number" name="cod" required>
 		<button type="submit" onclick="mostraAlerta()">Enviar</button>
 	</form>
+	</fieldset>
 
 	<script>
 		function mostraAlerta() {
