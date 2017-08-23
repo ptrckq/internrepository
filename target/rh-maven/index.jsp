@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Produtos w/ REST+DATAGRID+SSO</title>
 </head>
 <body>
 
@@ -17,17 +17,20 @@
 		</br>
 		
 	<fieldset><legend><p style="font-family: Verdana;">Insere Produto</p></legend>
-	<form action="ws/loja/produto/adiciona" method="post">
+	<form  name="formulario" action="ws/loja/produto/adiciona" method="post">
 		<label>Nome do Produto: </label><input type="text" name="nome" required>
 		<label>Preço do Produto: </label><input type="number" name="preco" required>
 		<label>Codigo de Barras: </label><input type="number" name="cod" required>
-		<button type="submit" onclick="mostraAlerta()">Enviar</button>
+		<input type="submit" id="btnEnviar" onclick="botaoFuncao()" value="Enviar">
 	</form>
 	</fieldset>
 
 	<script>
-		function mostraAlerta() {
-			alert("Dados salvos");
+		function botaoFuncao() {
+			var formulario = document.getElementsByName('formulario')[0];
+			formulario.submit();
+			formulario.reset();
+			return false;
 		}
 	</script>
 
