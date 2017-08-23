@@ -1,0 +1,4 @@
+br/com/ptrck/controller/Controlador.class
+br/com/ptrck/webservices/AplicacaoRest.class
+br/com/ptrck/model/Produto.class
+br/com/ptrck/webservices/RestMetodos.class
