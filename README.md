@@ -1,18 +1,25 @@
 # JBoss Data Grid + Single Sign On + REST API
+
+## Overview
 This tiny app is to test and have an overview about sending and retrieving data in memory with Red Hat JBoss Data Grid (through a WEB REST API), having a security layer (and single sign-on) when accessing webpages with Red Hat Single Sign-On (in this case only /index.jsp).
+ 
+
+# Standalone Deployment
 
 - Structure:
-  It works very simples. It's a person register which we send the person name, age and ID and Data Grid receives the data through Hot Rod (we retrieve through ID only). To write some data you have to use index.jsp page which you need SSO login, but for retrieving it's possible to do it outside.
-  
+  Project source code is in src/main/java. 
+  * Model: Produto.java
+  * Webservice: AplicacaoRest.java & RestMetodos.java
 
-## Prerequisites
+
+### Requirements
 - JBoss EAP (on default port)
 - JBoss Single Sign-On
 - JBoss Data Grid
 
-### Setup 
+### Setup and Deploy
 
-1. After cloning the project, deploy /target/rh-maven.war on EAP.
+1. Deploy project on EAP. (Mine is not working if I run the project directly so everytime I need run a maven install is necessary to generate .war, you can do this also if needed)
 
 2. You should now run RH SSO with -Djboss.socket.binding.port-offset=100 and create a realm named "demo", insert a Client named rh pointing to http://localhost:8080/rh/* and it will generate an adapter in installation tab, it looks like this
 
