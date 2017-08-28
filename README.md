@@ -10,6 +10,9 @@ This tiny app is to test and have an overview about sending and retrieving data 
   Project source code is in src/main/java. 
   * Model: Produto.java
   * Webservice: AplicacaoRest.java & RestMetodos.java
+  
+  WEB-INF
+  * Index.jsp
 
 
 ### Requirements
