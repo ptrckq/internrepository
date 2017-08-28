@@ -38,7 +38,7 @@ This tiny app is to test and have an overview about sending and retrieving data 
 4. Place this secure-deployment in EAP standalone.xml inside keycloack subsystem tag
 
 ```
-<subsystem xmlns="urn:jboss:domain:keycloak:1.1">
+       <subsystem xmlns="urn:jboss:domain:keycloak:1.1">
             <secure-deployment name="rh.war">
                 <realm>demo</realm>
                 <resource>rh</resource>
