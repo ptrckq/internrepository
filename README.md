@@ -12,8 +12,9 @@ This tiny app is to test and have an overview about sending and retrieving data 
 
 ### Setup 
 
-1 - After cloning the project, deploy /target/rh-maven.war on EAP.
-2 - You should now run RH SSO with -Djboss.socket.binding.port-offset=100 and create a realm named "demo", insert a Client named rh pointing to http://localhost:8080/rh/* and it will generate an adapter in installation tab, it looks like this
+1. After cloning the project, deploy /target/rh-maven.war on EAP.
+
+2. You should now run RH SSO with -Djboss.socket.binding.port-offset=100 and create a realm named "demo", insert a Client named rh pointing to http://localhost:8080/rh/* and it will generate an adapter in installation tab, it looks like this
 
 ```
 <secure-deployment name="WAR MODULE NAME.war">
@@ -25,8 +26,9 @@ This tiny app is to test and have an overview about sending and retrieving data 
 </secure-deployment>
 ```
 
-3 - Replace "WAR MODULE NAME.war" with rh.war
-4 - Place this secure-deployment in EAP standalone.xml inside keycloack subsystem tag
+3. Replace "WAR MODULE NAME.war" with rh.war
+
+4. Place this secure-deployment in EAP standalone.xml inside keycloack subsystem tag
 
 ```
 <subsystem xmlns="urn:jboss:domain:keycloak:1.1">
@@ -39,13 +41,13 @@ This tiny app is to test and have an overview about sending and retrieving data 
             </secure-deployment>
         </subsystem>
 ```
-5 - No configurations may be needed on Data Grid, you just need to run with port-offset=200 so the app will be able to insert data on memory. 
+5. No configurations may be needed on Data Grid, you just need to run with port-offset=200 so the app will be able to insert data on memory. 
 
-6 - Use it!
+6. Use it!
 >http://localhost:8080/rh/ 
 This link may redirect you to index.jsp so you can post some data using INSERE PRODUTO and after that you can search for it using BUSCA PRODUTO.
 
-7 - 
+7. Or you can use http://localhost:8080/rh/ws/loja/produto/recupera?cod={cod} which is a GET Request for retrieving data from memory.
 
 
 
